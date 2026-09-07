@@ -1,6 +1,5 @@
 import binascii
 from base64 import urlsafe_b64decode
-from typing import List, Optional
 
 from .const import TOKEN_REGEX, URL_REGEX
 
@@ -13,7 +12,7 @@ class Validator:
     """
 
     @classmethod
-    def find_urls(cls, text: str) -> Optional[List[str]]:
+    def find_urls(cls, text: str) -> list[str] | None:
         """
         Find all URLs in a string.
 
@@ -26,7 +25,7 @@ class Validator:
         return URL_REGEX.findall(text)
 
     @classmethod
-    def find_tokens(cls, text: str) -> Optional[List[str]]:
+    def find_tokens(cls, text: str) -> list[str] | None:
         """
         Find all tokens in a string.
 

@@ -24,7 +24,7 @@ from .....embed import Embed
 from ...utils import return_option
 from .counting import CountingSettings
 
-__all__ = ("GuildFunSettings", "CountingSettings")
+__all__ = ("CountingSettings", "GuildFunSettings")
 
 
 class GuildFunSettings:
@@ -40,7 +40,7 @@ class GuildFunSettings:
         return Embed("你可以在這裡為這個伺服器設定趣味功能。")
 
     @staticmethod
-    def components(ctx: interactions.ComponentContext) -> List[interactions.ActionRow]:
+    def components(ctx: interactions.ComponentContext) -> list[interactions.ActionRow]:
         """
         Generate components for the fun settings.
 

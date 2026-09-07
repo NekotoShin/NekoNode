@@ -31,12 +31,12 @@ from .features import (
 from .utils import to_bigint, to_snowflake
 
 __all__ = (
+    "CountingSettingsModel",
     "DatabaseClient",
-    "to_bigint",
-    "to_snowflake",
     "DvcSettingsModel",
     "SafetySettingsModel",
-    "CountingSettingsModel",
+    "to_bigint",
+    "to_snowflake",
 )
 
 
@@ -50,10 +50,10 @@ class DatabaseClient(Dvc, Safety, Counting):
 
     def __init__(
         self,
-        hosts: List[str],
-        username: Optional[str] = "",
-        password: Optional[str] = "",
-        keyspace: Optional[str] = "discord",
+        hosts: list[str],
+        username: str | None = "",
+        password: str | None = "",
+        keyspace: str | None = "discord",
         **kwargs
     ) -> None:
         self.scylla = Scylla(

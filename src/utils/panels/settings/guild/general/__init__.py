@@ -24,7 +24,7 @@ from .....embed import Embed
 from ...utils import return_option
 from .dvc import DvcSettings
 
-__all__ = ("GuildGeneralSettings", "DvcSettings")
+__all__ = ("DvcSettings", "GuildGeneralSettings")
 
 
 class GuildGeneralSettings:
@@ -40,7 +40,7 @@ class GuildGeneralSettings:
         return Embed("你可以在這裡為這個伺服器設定各種功能。")
 
     @staticmethod
-    def components(ctx: interactions.ComponentContext) -> List[interactions.ActionRow]:
+    def components(ctx: interactions.ComponentContext) -> list[interactions.ActionRow]:
         """
         Generate components for the general settings.
 

@@ -15,13 +15,11 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from typing import Optional
-
 from interactions import Snowflake_Type
 from scyllapy.extra_types import BigInt
 
 
-def to_bigint(snowflake: Snowflake_Type, as_int: Optional[bool] = False) -> BigInt:
+def to_bigint(snowflake: Snowflake_Type, as_int: bool | None = False) -> BigInt:
     """
     Convert a snowflake (uint64) to a bigint.
 
