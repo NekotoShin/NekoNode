@@ -16,7 +16,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 import dataclasses
-from typing import AsyncGenerator
+from collections.abc import AsyncGenerator
 
 from ....protocols import CanExecute
 from ...utils import to_bigint, to_snowflake
