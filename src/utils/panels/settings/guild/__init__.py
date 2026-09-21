@@ -28,14 +28,14 @@ from .preferences import GuildPreferencesSettings
 from .safety import GuildSafetySettings, MessageSafetySettings
 
 __all__ = (
-    "GuildSettings",
-    "GuildGeneralSettings",
-    "GuildFunSettings",
-    "GuildSafetySettings",
-    "MessageSafetySettings",
-    "GuildPreferencesSettings",
-    "DvcSettings",
     "CountingSettings",
+    "DvcSettings",
+    "GuildFunSettings",
+    "GuildGeneralSettings",
+    "GuildPreferencesSettings",
+    "GuildSafetySettings",
+    "GuildSettings",
+    "MessageSafetySettings",
 )
 
 
@@ -52,7 +52,7 @@ class GuildSettings:
         return Embed("你可以在這裡修改這個伺服器的設定。")
 
     @staticmethod
-    def components(ctx: interactions.ComponentContext) -> List[interactions.ActionRow]:
+    def components(ctx: interactions.ComponentContext) -> list[interactions.ActionRow]:
         """
         Generate components for the guild settings.
 

@@ -34,16 +34,16 @@ from .guild import (
 from .personal import PersonalSettings
 
 __all__ = (
-    "Settings",
-    "GuildSettings",
-    "GuildSafetySettings",
+    "CountingSettings",
+    "DvcSettings",
     "GuildFunSettings",
     "GuildGeneralSettings",
     "GuildPreferencesSettings",
-    "DvcSettings",
+    "GuildSafetySettings",
+    "GuildSettings",
     "MessageSafetySettings",
-    "CountingSettings",
     "PersonalSettings",
+    "Settings",
 )
 
 
@@ -60,7 +60,7 @@ class Settings:
         return Embed("你可以在這裡設定機器人的各種功能或個人化選項。")
 
     @staticmethod
-    def components(ctx: interactions.BaseContext) -> List[interactions.ActionRow]:
+    def components(ctx: interactions.BaseContext) -> list[interactions.ActionRow]:
         """
         Generate components for the settings command.
 

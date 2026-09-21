@@ -15,7 +15,7 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from typing import Any, Dict, Optional, TypeVar
+from typing import Any, TypeVar
 
 import tomli
 
@@ -33,7 +33,7 @@ class Config:
         self._path = path
         self._config = self._load_config()
 
-    def _load_config(self) -> Dict[str, Any]:
+    def _load_config(self) -> dict[str, Any]:
         """
         Load the configuration file.
         This is an internal method and should not be called directly.
@@ -47,7 +47,7 @@ class Config:
         with open(self._path, "rb") as f:
             return tomli.load(f)
 
-    def get(self, key: str, default: Optional[T] = None) -> Optional[T]:
+    def get(self, key: str, default: T | None = None) -> T | None:
         """
         Get a key from the configuration file.
 
@@ -74,7 +74,7 @@ class Config:
         self._config = self._load_config()
 
     @property
-    def config(self) -> Dict[str, Any]:
+    def config(self) -> dict[str, Any]:
         """
         Get the configuration as a dictionary.
 

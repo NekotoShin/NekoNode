@@ -17,7 +17,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import asyncio
 import re
-from typing import List, Tuple
 
 import interactions
 from interactions import MISSING, TYPE_ALL_CHANNEL, Absent
@@ -142,7 +141,7 @@ class DvcComponents(BaseExtension):
 
     transfer_regex = re.compile(r"dvc_panel:transfer_select:(\d+)")
 
-    async def handle_enabled(self, ctx: interactions.ComponentContext) -> Tuple[Embed, List[interactions.ActionRow]]:
+    async def handle_enabled(self, ctx: interactions.ComponentContext) -> tuple[Embed, list[interactions.ActionRow]]:
         """
         Handle the enabled setting.
 

@@ -18,7 +18,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import ast
 import math
 import operator as op
-from typing import List, Tuple
 
 import interactions
 from interactions.api.events import MessageCreate
@@ -94,7 +93,7 @@ class Counting(BaseExtension):
             await event.message.add_reaction(emoji)
             await self.database.inc_current_count(event.message.guild.id, event.message.author.id)
 
-    async def handle_enabled(self, ctx: interactions.ComponentContext) -> Tuple[Embed, List[interactions.ActionRow]]:
+    async def handle_enabled(self, ctx: interactions.ComponentContext) -> tuple[Embed, list[interactions.ActionRow]]:
         """
         Handle the enabled setting.
 

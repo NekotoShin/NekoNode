@@ -15,8 +15,6 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from typing import List
-
 import interactions
 
 from src.utils.embed import Embed
@@ -46,7 +44,7 @@ class DvcPanel:
         return embed
 
     @staticmethod
-    def components() -> List[interactions.ActionRow]:
+    def components() -> list[interactions.ActionRow]:
         """
         Create components for the dynamic voice channel panel.
         """
@@ -155,7 +153,7 @@ class DvcPanel:
         return Embed("請選擇一個新的語音頻道擁有者。")
 
     @staticmethod
-    def transfer_components(ori: int) -> List[interactions.ActionRow]:
+    def transfer_components(ori: int) -> list[interactions.ActionRow]:
         """
         Create components for the dynamic voice channel transfer settings.
         """
