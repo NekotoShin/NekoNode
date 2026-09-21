@@ -19,13 +19,12 @@ import inspect
 import logging
 import sys
 from datetime import timedelta
-from typing import Optional
 
 from loguru._logger import Core
 from loguru._logger import Logger as _Logger
 from loguru._logger import _defaults
 
-__all__ = ("Logger", "InterceptHandler")
+__all__ = ("InterceptHandler", "Logger")
 
 
 class Logger(_Logger):
@@ -37,9 +36,9 @@ class Logger(_Logger):
 
     def __init__(
         self,
-        log_format: Optional[str] = _defaults.LOGURU_FORMAT,
-        level: Optional[str] = "WARNING",
-        retention: Optional[int] = 0,
+        log_format: str | None = _defaults.LOGURU_FORMAT,
+        level: str | None = "WARNING",
+        retention: int | None = 0,
     ) -> None:
         """
         Initialize the logger instance.
