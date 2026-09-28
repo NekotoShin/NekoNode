@@ -39,7 +39,7 @@ class GuildPreferencesSettings:
         return Embed("你可以在這裡修改這個伺服器的偏好設定。")
 
     @staticmethod
-    def components(ctx: interactions.ComponentContext) -> List[interactions.ActionRow]:
+    def components(ctx: interactions.ComponentContext) -> list[interactions.ActionRow]:
         """
         Generate components for the preferences settings.
 

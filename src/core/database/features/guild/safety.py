@@ -59,16 +59,14 @@ class Safety(CanExecute):
     The database class of the bot.
     """
 
-    setup_queries = [
-        """
+    setup_queries = ["""
         CREATE TABLE IF NOT EXISTS guild_safety (
             id BIGINT,
             dtoken BOOLEAN,
             url BOOLEAN,
             PRIMARY KEY (id)
         );
-        """
-    ]
+        """]
 
     async def get_guild_safety_settings(self, guild_id: int) -> SafetySettingsModel:
         """
