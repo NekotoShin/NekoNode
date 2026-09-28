@@ -15,8 +15,6 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from typing import List
-
 import interactions
 
 from src.core.database import SafetySettingsModel
@@ -54,7 +52,7 @@ class MessageSafetySettings:
         return embed
 
     @staticmethod
-    def components(safety: SafetySettingsModel) -> List[interactions.ActionRow]:
+    def components(safety: SafetySettingsModel) -> list[interactions.ActionRow]:
         """
         Create components for the dynamic voice channel settings.
         """
