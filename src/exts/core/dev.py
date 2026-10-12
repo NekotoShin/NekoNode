@@ -18,7 +18,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import glob
 import re
 from functools import lru_cache
-from typing import List, Literal, Optional, Tuple
+from typing import Literal
 
 import interactions
 from interactions.ext import prefixed_commands
@@ -145,7 +145,7 @@ class DeveloperComponents(BaseExtension):
     extensions_regex = re.compile(r"(\d+):developer:extensions")
 
     @staticmethod
-    def developer(author_id: int) -> List[interactions.ActionRow]:
+    def developer(author_id: int) -> list[interactions.ActionRow]:
         """
         The components for the prefixed developer command.
         """
@@ -182,7 +182,7 @@ class DeveloperComponents(BaseExtension):
         ]
 
     @staticmethod
-    def shutdown() -> List[interactions.ActionRow]:
+    def shutdown() -> list[interactions.ActionRow]:
         """
         The components for the shutdown command.
         """
@@ -223,7 +223,7 @@ class DeveloperComponents(BaseExtension):
             await self.client.stop()
 
     @staticmethod
-    def eval_completed(author_id: int) -> List[interactions.ActionRow]:
+    def eval_completed(author_id: int) -> list[interactions.ActionRow]:
         """
         The components for the eval command after completion.
         """
@@ -268,7 +268,7 @@ class DeveloperComponents(BaseExtension):
             )
 
     @staticmethod
-    def extensions(author_id: int, skip_list: Optional[bool] = False) -> List[interactions.ActionRow]:
+    def extensions(author_id: int, skip_list: bool | None = False) -> list[interactions.ActionRow]:
         """
         The components for the extensions command.
         """
@@ -369,7 +369,7 @@ class DeveloperCore(BaseExtension):
 
     @staticmethod
     @lru_cache(maxsize=1)
-    def get_extensions(client: Client) -> Tuple[List[str], List[str]]:
+    def get_extensions(client: Client) -> tuple[list[str], list[str]]:
         """
         Get the loaded and unloaded extensions.
         """
