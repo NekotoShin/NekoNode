@@ -15,8 +15,6 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from typing import List
-
 import interactions
 
 from src.core.database import CountingSettingsModel
@@ -57,7 +55,7 @@ class CountingSettings:
         return embed
 
     @staticmethod
-    def components(counting: CountingSettingsModel) -> List[interactions.ActionRow]:
+    def components(counting: CountingSettingsModel) -> list[interactions.ActionRow]:
         """
         Create components for the dynamic voice channel settings.
         """
@@ -96,7 +94,7 @@ class CountingSettings:
         return Embed("請選擇一個文字頻道作為數數字遊戲的頻道。")
 
     @staticmethod
-    def channel_components() -> List[interactions.ActionRow]:
+    def channel_components() -> list[interactions.ActionRow]:
         """
         Create components for the counting channel settings.
         """

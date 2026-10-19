@@ -15,7 +15,7 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from typing import TYPE_CHECKING, Literal, Optional
+from typing import TYPE_CHECKING, Literal
 
 import interactions
 
@@ -46,9 +46,9 @@ class Embed(interactions.Embed):
 
     def __init__(
         self,
-        description: Optional[str] = None,
-        success: Optional[bool] = None,
-        fullwidth: Optional[bool] = True,
+        description: str | None = None,
+        success: bool | None = None,
+        fullwidth: bool | None = True,
         **kwargs,
     ) -> None:
         if "color" in kwargs and success is not None:
@@ -75,7 +75,7 @@ class Embed(interactions.Embed):
                 "e02132e12ca6e237b94ae13762e18e164f124231/assets/other/embed-fullwidth.png"
             )
 
-    def add_field(self, name: str, value: str, inline: Optional[bool] = False, pre: Optional[bool] = False) -> "Embed":
+    def add_field(self, name: str, value: str, inline: bool | None = False, pre: bool | None = False) -> "Embed":
         """
         Adds a new field to the embed.
 
@@ -96,7 +96,7 @@ class Embed(interactions.Embed):
         return super().add_field(name, value, inline)
 
     @classmethod
-    def declined(cls, ctype: Optional[Literal["button", "select"]] = "button") -> "Embed":
+    def declined(cls, ctype: Literal["button", "select"] | None = "button") -> "Embed":
         """
         Returns an embed with a declined response.
 
