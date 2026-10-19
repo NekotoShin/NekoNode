@@ -19,7 +19,6 @@ import copy
 import glob
 import logging
 import os
-from typing import Union
 
 import interactions
 import psutil
@@ -46,7 +45,7 @@ class Client(interactions.Client):
 
     def __new__(cls, *args, **kwargs):
         if cls._instance is None:
-            cls._instance = super(Client, cls).__new__(cls, *args, **kwargs)
+            cls._instance = super().__new__(cls, *args, **kwargs)
         else:
             raise RuntimeError("Client is already initialized. Only one instance of the client is allowed.")
         return cls._instance
@@ -122,7 +121,7 @@ class Client(interactions.Client):
             "\n-------------------------",
         )
 
-    def get_invite_url(self, permissions: Union[int, interactions.Permissions]) -> str:
+    def get_invite_url(self, permissions: int | interactions.Permissions) -> str:
         """
         Gets the invite URL for the bot.
 
@@ -137,7 +136,7 @@ class Client(interactions.Client):
         return f"https://discord.com/oauth2/authorize?client_id={self.user.id}&scope=bot&permissions={permissions}"
 
     @staticmethod
-    def has_permissions(has: interactions.Permissions, *required: Union[interactions.Permissions, int]) -> bool:
+    def has_permissions(has: interactions.Permissions, *required: interactions.Permissions | int) -> bool:
         """
         Check if a permission set has the required permissions.
 
