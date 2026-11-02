@@ -15,8 +15,6 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from typing import Optional
-
 __all__ = ("BotException", "Ratelimited")
 
 
@@ -29,7 +27,7 @@ class Ratelimited(BotException):
     This exception is raised when the client is ratelimited.
     """
 
-    def __init__(self, message: str, retry_after: Optional[int] = None) -> None:
+    def __init__(self, message: str, retry_after: int | None = None) -> None:
         super().__init__()
         self.message = message
         self.retry_after = retry_after
