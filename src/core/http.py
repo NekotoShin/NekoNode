@@ -70,7 +70,7 @@ class ModifiedHTTPClient(HTTPClient, RaiseRequests):
     The modified HTTP client.
     """
 
-    async def request(  # noqa: C901
+    async def request(
         self,
         route: Route,
         payload: list | dict | None = None,
